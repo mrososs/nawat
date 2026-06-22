@@ -1,0 +1,10 @@
+/* ============================================================
+   NAWAT Design System — global entry point.
+   Imports must stay first (tokens), then base, then kit layout.
+   ============================================================ */
+@import "./tokens/colors.css";
+@import "./tokens/fonts.css";
+@import "./tokens/typography.css";
+@import "./tokens/spacing.css";
+@import "./tokens/base.css";
+@import "./site.css";

@@ -1,0 +1,29 @@
+/* ============================================================
+   NAWAT · Webfonts (@font-face)
+   ------------------------------------------------------------
+   The brand faces — PRIMARY/Latin "thmanyah sans" and
+   SECONDARY/Arabic "Arslan Wessam B" — ship as licensed .woff2
+   files inside the Claude Design project (assets/fonts/*.woff2).
+   They are NOT bundled here. The type stack in tokens/typography.css
+   lists them FIRST, then falls back to the design's documented
+   web fallbacks (Plus Jakarta Sans / IBM Plex Sans Arabic, loaded
+   from Google Fonts), so typography is intentional out of the box.
+
+   thmanyah sans is the PRIMARY face for both English and Arabic (it
+   carries Latin + Arabic glyphs); Arslan Wessam B is the Arabic display
+   face used for large headings and the نواة wordmark. Files served from
+   /public/fonts.
+   ============================================================ */
+
+@font-face {
+  font-family: "Arslan Wessam B";
+  src: url("/fonts/Arslan-Wessam-B.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face { font-family:"thmanyah sans"; src:url("/fonts/thmanyahsans-Light.woff2")   format("woff2"); font-weight:300; font-style:normal; font-display:swap; }
+@font-face { font-family:"thmanyah sans"; src:url("/fonts/thmanyahsans-Regular.woff2") format("woff2"); font-weight:400; font-style:normal; font-display:swap; }
+@font-face { font-family:"thmanyah sans"; src:url("/fonts/thmanyahsans-Medium.woff2")  format("woff2"); font-weight:500; font-style:normal; font-display:swap; }
+@font-face { font-family:"thmanyah sans"; src:url("/fonts/thmanyahsans-Bold.woff2")    format("woff2"); font-weight:700; font-style:normal; font-display:swap; }
+@font-face { font-family:"thmanyah sans"; src:url("/fonts/thmanyahsans-Black.woff2")   format("woff2"); font-weight:800; font-style:normal; font-display:swap; }

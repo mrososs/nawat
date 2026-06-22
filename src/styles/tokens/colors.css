@@ -1,0 +1,88 @@
+/* ============================================================
+   NAWAT · Color tokens
+   Brand anchors (from brand guidelines):
+   Digital Navy #00017B · Bright Azure #00A2FF · Neon Cyan #4AF3F8 · White
+   ============================================================ */
+:root {
+  /* --- Brand anchors --- */
+  --color-navy:  #00017B; /* Digital Navy  — primary brand */
+  --color-azure: #00A2FF; /* Bright Azure  — interactive / CTA */
+  --color-cyan:  #4AF3F8; /* Neon Cyan     — accent / highlight */
+  --color-white: #FFFFFF;
+
+  /* --- Navy ramp (deep sovereign blues for dark surfaces) --- */
+  --navy-950: #00010C;
+  --navy-900: #00021F; /* hero / page ink */
+  --navy-850: #000635;
+  --navy-800: #00084A;
+  --navy-700: #00017B; /* = Digital Navy */
+  --navy-600: #0010A6;
+  --navy-500: #1B2ED6;
+
+  /* --- Azure ramp --- */
+  --azure-700: #0061B8;
+  --azure-600: #0080DB;
+  --azure-500: #00A2FF; /* = Bright Azure */
+  --azure-400: #4DBBFF;
+  --azure-300: #99D6FF;
+
+  /* --- Cyan ramp --- */
+  --cyan-600: #14C9D6;
+  --cyan-500: #4AF3F8; /* = Neon Cyan */
+  --cyan-400: #80F7FA;
+  --cyan-300: #B3FBFC;
+
+  /* --- Cool neutral ramp (grays read slightly blue) --- */
+  --gray-50:  #F4F7FB;
+  --gray-100: #E7EEF6;
+  --gray-200: #CFDAE8;
+  --gray-300: #AAB9CE;
+  --gray-400: #7E8EA6;
+  --gray-500: #57657E;
+  --gray-600: #3B475C;
+  --gray-700: #26303F;
+  --gray-800: #161E2B;
+  --gray-900: #0B111B;
+
+  /* --- Functional (used sparingly; brand stays navy-forward) --- */
+  --green-500: #1FB57A; /* sustainability / online status */
+  --amber-500: #E8A13A; /* in-progress / caution */
+  --red-500:   #E3525B; /* error */
+
+  /* ====================== SEMANTIC ALIASES ====================== */
+  /* Text */
+  --text-strong:  var(--navy-700);   /* headings on light */
+  --text-body:    var(--gray-700);   /* body on light */
+  --text-muted:   var(--gray-500);   /* secondary on light */
+  --text-inverse: var(--color-white);/* on dark surfaces */
+  --text-inverse-muted: rgba(255,255,255,0.66);
+  --text-accent:  var(--azure-500);  /* links / emphasis */
+
+  /* Surfaces */
+  --surface-page:   var(--color-white);
+  --surface-subtle: var(--gray-50);
+  --surface-card:   var(--color-white);
+  --surface-ink:    var(--navy-900); /* dark sections / hero */
+  --surface-ink-2:  var(--navy-850); /* raised panel on dark */
+  --surface-brand:  var(--navy-700); /* solid brand navy block */
+
+  /* Borders */
+  --border-subtle:  var(--gray-200);
+  --border-strong:  var(--gray-300);
+  --border-on-dark: rgba(255,255,255,0.14);
+  --border-accent:  var(--azure-500);
+
+  /* Interactive */
+  --cta-bg:        var(--azure-500);
+  --cta-bg-hover:  var(--azure-600);
+  --cta-bg-active: var(--azure-700);
+  --cta-text:      var(--color-white);
+  --link:          var(--azure-500);
+  --link-hover:    var(--azure-600);
+  --accent:        var(--cyan-500);
+  --focus-ring:    var(--azure-400);
+
+  /* Glows (for dark surfaces) */
+  --glow-azure: 0 0 0 1px rgba(0,162,255,.35), 0 8px 40px rgba(0,162,255,.28);
+  --glow-cyan:  0 0 60px rgba(74,243,248,.30);
+}
