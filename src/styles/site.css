@@ -36,7 +36,40 @@ html, body { margin:0; background:var(--surface-page); scroll-behavior:smooth; }
 .nav__lang{ background:none; border:1px solid rgba(255,255,255,.28); color:#fff; cursor:pointer;
   font:600 13px var(--font-sans); padding:7px 13px; border-radius:var(--radius-pill); transition:.15s var(--ease-out); }
 .nav__lang:hover{ border-color:#fff; background:rgba(255,255,255,.08); }
-@media (max-width:880px){ .nav__links{ display:none; } }
+
+/* Hamburger — hidden on desktop, shown on tablet/mobile */
+.nav__burger{ display:none; align-items:center; justify-content:center; background:none;
+  border:0; color:#fff; cursor:pointer; padding:6px; margin:-6px; border-radius:10px;
+  transition:background .15s var(--ease-out); }
+.nav__burger:hover{ background:rgba(255,255,255,.08); }
+
+/* Slide-down mobile panel */
+.nav__mobile{ position:absolute; top:100%; left:0; right:0; display:none; flex-direction:column;
+  gap:4px; padding:12px clamp(1.5rem,1rem + 3vw,4rem) 24px;
+  background:rgba(0,2,31,.96); backdrop-filter:blur(16px) saturate(1.4);
+  border-bottom:1px solid rgba(255,255,255,.10); }
+.nav__mobile-link{ font:600 17px var(--font-sans); color:rgba(255,255,255,.82);
+  text-decoration:none; padding:13px 4px; border-bottom:1px solid rgba(255,255,255,.06);
+  transition:color .15s; }
+.nav__mobile-link:hover, .nav__mobile-link--active{ color:#fff; }
+.nav__mobile-cta{ display:none; margin-top:16px; align-self:flex-start; }
+
+.nav-panel-enter-active, .nav-panel-leave-active{ transition:opacity .25s var(--ease-out), transform .25s var(--ease-out); }
+.nav-panel-enter-from, .nav-panel-leave-to{ opacity:0; transform:translateY(-8px); }
+
+/* md / tablet: collapse the inline links into the hamburger */
+@media (max-width:880px){
+  .nav__links{ display:none; }
+  .nav__burger{ display:inline-flex; }
+  .nav--open .nav__mobile{ display:flex; }
+}
+
+/* small: fold the desktop CTA into the panel, keep lang + burger */
+@media (max-width:560px){
+  .nav__cta{ display:none; }
+  .nav__mobile-cta{ display:inline-flex; }
+  .nav__logo{ height:38px; }
+}
 
 /* ===== HERO SCENE (cinematic, depth) ===== */
 .hero{ position:relative; isolation:isolate; background:#00010C; color:#fff; overflow:hidden; }
