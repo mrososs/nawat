@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import type { Dict } from '@/i18n/dictionary'
+import CityHero from '@/components/hero/CityHero.vue'
 import HeroScene from '@/components/hero/HeroScene.vue'
 import NwEyebrow from '@/components/core/NwEyebrow.vue'
 import NwButton from '@/components/core/NwButton.vue'
@@ -20,11 +21,14 @@ const previewServices = computed(() => (tm('services.items') as Dict['services']
 
 <template>
   <div>
-    <!-- HERO -->
-    <section class="hero hero--full">
-      <HeroScene />
+    <!-- FULL-SCREEN INTERACTIVE CITY -->
+    <CityHero />
+
+    <!-- HERO TEXT — under the video -->
+    <section class="hero hero--under">
+      <HeroScene :webgl="false" />
       <div class="wrap">
-        <div class="hero__inner hero__inner--wide" data-stagger>
+        <div class="hero__inner hero__inner--under" data-stagger>
           <NwEyebrow on-dark line>{{ t('home.eyebrow') }}</NwEyebrow>
           <h1 class="hero__title">
             {{ t('home.h1a') }}<span class="text-cyan">{{ t('home.h1hl') }}</span>{{ t('home.h1b') }}

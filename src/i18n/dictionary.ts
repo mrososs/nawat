@@ -12,6 +12,16 @@ const en = {
     h1a: 'We develop the Kingdom’s ', h1hl: 'Digital', h1b: ' infrastructure',
     lead: 'NAWAT is a Saudi developer that designs, builds and operates next-gen, AI-ready data center campuses. Our flagship campus — Project Quantum — delivers 200 MW of GPU-dense compute to Riyadh.',
     explore: 'Explore Quantum', partner: 'Partner with us',
+    mapHint: 'Interactive campus — hover or tap a node',
+    scroll: 'Scroll',
+    soundOn: 'Turn sound on', soundOff: 'Turn sound off',
+    nodes: [
+      { k: 'Flagship', title: 'Project Quantum', desc: '200 MW GPU-dense, AI-ready sovereign campus in Riyadh.', cta: 'Explore Quantum' },
+      { k: 'Connectivity', title: 'Fiber & interconnect', desc: 'Carrier-neutral backbone, low-latency links to Riyadh.', cta: 'Our services' },
+      { k: 'Ecosystem', title: 'Partner network', desc: 'Hyperscaler, EPC, utility and capital partners.', cta: 'Meet partners' },
+      { k: 'The Kingdom', title: 'Sovereign by design', desc: 'In-Kingdom compute, aligned with Vision 2030.', cta: 'About NAWAT' },
+      { k: 'Engage', title: 'Partner with us', desc: 'Hyperscaler, investor or ecosystem partner — let’s talk.', cta: 'Contact us' },
+    ],
   },
   statement: { eyebrow: 'Why NAWAT', a: 'From consumer to producer — building the Kingdom’s ', em: 'sovereign AI infrastructure', b: '.' },
   pillars: [
@@ -128,6 +138,16 @@ const ar: Dict = {
     h1a: 'نطوّر البنية ', h1hl: 'الرقمية', h1b: ' للمملكة',
     lead: 'نواة شركة سعودية تُصمّم وتبني وتشغّل حُرُم مراكز بيانات من الجيل القادم وجاهزة للذكاء الاصطناعي. مشروعنا الرائد — كوانتم — يوفّر 200 ميجاواط من القدرة الحاسوبية عالية الكثافة لمدينة الرياض.',
     explore: 'استكشف كوانتم', partner: 'كن شريكاً',
+    mapHint: 'حرم تفاعلي — مرّر أو انقر على نقطة',
+    scroll: 'مرّر',
+    soundOn: 'تشغيل الصوت', soundOff: 'كتم الصوت',
+    nodes: [
+      { k: 'الرائد', title: 'مشروع كوانتم', desc: 'حرم سيادي بسعة 200 ميجاواط عالي الكثافة وجاهز للذكاء الاصطناعي في الرياض.', cta: 'استكشف كوانتم' },
+      { k: 'الاتصال', title: 'الألياف والربط', desc: 'شبكة محايدة للمشغّلين وروابط منخفضة زمن الوصول بالرياض.', cta: 'خدماتنا' },
+      { k: 'المنظومة', title: 'شبكة الشركاء', desc: 'شركاء حوسبة فائقة النطاق ومقاولون ومرافق ورأس مال.', cta: 'تعرّف على الشركاء' },
+      { k: 'المملكة', title: 'سيادية بالتصميم', desc: 'حوسبة داخل المملكة، متوافقة مع رؤية 2030.', cta: 'عن نواة' },
+      { k: 'تواصل', title: 'كن شريكاً', desc: 'مزوّد حوسبة فائقة النطاق، مستثمر أو شريك — لنتحدّث.', cta: 'تواصل معنا' },
+    ],
   },
   statement: { eyebrow: 'لماذا نواة', a: 'من مستهلك إلى منتج — نبني ', em: 'البنية السيادية للذكاء الاصطناعي', b: ' في المملكة.' },
   pillars: [
