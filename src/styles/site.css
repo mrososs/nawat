@@ -275,7 +275,7 @@ html.lenis, html.lenis body { height: auto; }
 .footer a{ color:rgba(255,255,255,.7); cursor:pointer; }
 .footer a:hover{ color:#fff; }
 .footer__legal{ display:flex; gap:18px; flex-wrap:wrap; }
-.footer__copy{ margin-top:22px; font-size:12px; opacity:.5; }
+.footer__copy{ margin-top:22px; font-size:12px; opacity:.75; }
 
 /* responsive helpers from kit index */
 @media (max-width:760px){ .contact-grid { grid-template-columns:1fr !important; } }
