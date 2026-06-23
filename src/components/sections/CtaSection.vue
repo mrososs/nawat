@@ -11,7 +11,7 @@ const { t } = useI18n()
 <template>
   <section class="section section--ink section--center">
     <HeroScene :webgl="false" />
-    <div class="wrap cta__inner" data-reveal>
+    <div class="wrap cta__inner" data-stagger>
       <NwEyebrow on-dark>{{ t('cta.eyebrow') }}</NwEyebrow>
       <h2 class="cta__title">{{ t('cta.title') }}</h2>
       <p class="lead cta__lead">{{ t('cta.lead') }}</p>

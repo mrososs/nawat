@@ -24,7 +24,7 @@ const previewServices = computed(() => (tm('services.items') as Dict['services']
     <section class="hero hero--full">
       <HeroScene />
       <div class="wrap">
-        <div class="hero__inner hero__inner--wide" data-reveal>
+        <div class="hero__inner hero__inner--wide" data-stagger>
           <NwEyebrow on-dark line>{{ t('home.eyebrow') }}</NwEyebrow>
           <h1 class="hero__title">
             {{ t('home.h1a') }}<span class="text-cyan">{{ t('home.h1hl') }}</span>{{ t('home.h1b') }}
@@ -86,7 +86,7 @@ const previewServices = computed(() => (tm('services.items') as Dict['services']
           </div>
           <div class="split__visual" data-reveal>
             <div class="vgrid" />
-            <img :src="logoMarkWhite" alt="" />
+            <img :src="logoMarkWhite" alt="" data-parallax="0.25" />
             <div class="split__badge">
               <NwStat value="200" unit="MW" :label="t('split.flagship')" on-dark />
               <NwStat value="4 × 50" unit="MW" :label="t('split.pods')" on-dark />

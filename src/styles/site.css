@@ -162,30 +162,16 @@ html, body { margin:0; background:var(--surface-page); scroll-behavior:smooth; }
 .phase__bar{ height:4px; border-radius:2px; margin-top:18px; background:var(--gray-100); }
 .phase__bar > span{ display:block; height:100%; background:var(--azure-500); border-radius:2px; }
 
-/* ===== SCROLL REVEALS — pure CSS scroll-driven (no JS, no class toggling) ===== */
-@media (prefers-reduced-motion: no-preference) {
-  @supports (animation-timeline: view()) {
-    [data-reveal] { animation: nwReveal both linear; animation-timeline: view(); animation-range: entry 0% cover 24%; }
-    [data-stagger] > * { animation: nwReveal both linear; animation-timeline: view(); animation-range: entry 0% cover 30%; }
-    /* Real stagger: each successive item resolves a touch later through the scroll. */
-    [data-stagger] > *:nth-child(2){ animation-range: entry 4% cover 34%; }
-    [data-stagger] > *:nth-child(3){ animation-range: entry 8% cover 38%; }
-    [data-stagger] > *:nth-child(4){ animation-range: entry 12% cover 42%; }
-    [data-stagger] > *:nth-child(5){ animation-range: entry 12% cover 42%; }
-    [data-stagger] > *:nth-child(6){ animation-range: entry 16% cover 46%; }
-    @keyframes nwReveal { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:none; } }
-  }
+/* ===== SCROLL REVEALS & HERO ENTRANCE =====
+   Driven by GSAP + ScrollTrigger (see src/animations). GSAP sets the hidden
+   start state at runtime, and only when motion is allowed — so with JS disabled
+   or under prefers-reduced-motion the content simply renders visible. */
 
-  /* Hero entrance choreography — runs on mount (incl. each route enter). */
-  .hero__inner > * { animation: nwRise .72s both var(--ease-out-quint); }
-  .hero__inner > *:nth-child(1){ animation-delay:.04s; }
-  .hero__inner > *:nth-child(2){ animation-delay:.12s; }
-  .hero__inner > *:nth-child(3){ animation-delay:.20s; }
-  .hero__inner > *:nth-child(4){ animation-delay:.28s; }
-  .hero__inner > *:nth-child(5){ animation-delay:.36s; }
-  .hero__inner > *:nth-child(6){ animation-delay:.44s; }
-  @keyframes nwRise { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:none; } }
-}
+/* Lenis smooth scroll — recommended baseline so wheel/touch hand off cleanly. */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: clip; }
+.lenis.lenis-smooth iframe { pointer-events: none; }
 
 /* Card icon micro-interaction — lifts with the interactive card / pillar on hover. */
 .nw-card__icon{ transition:transform var(--dur-base) var(--ease-out), background var(--dur-base) var(--ease-out); }

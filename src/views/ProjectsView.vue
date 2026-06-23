@@ -20,7 +20,7 @@ const fillClass = ['phase__fill--25', 'phase__fill--50', 'phase__fill--75', 'pha
     <section class="hero">
       <HeroScene />
       <div class="wrap">
-        <div class="hero__inner" data-reveal>
+        <div class="hero__inner" data-stagger>
           <NwEyebrow on-dark line>{{ t('quantum.eyebrow') }}</NwEyebrow>
           <h1 class="hero__title hero__title--narrow">{{ t('quantum.title') }}</h1>
           <p class="lead hero__lead--wide">{{ t('quantum.lead') }}</p>

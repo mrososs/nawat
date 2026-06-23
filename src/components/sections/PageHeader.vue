@@ -10,7 +10,7 @@ defineProps<{ eyebrow: string; title: string; lead?: string }>()
   <section class="hero">
     <HeroScene />
     <div class="wrap">
-      <div class="hero__inner hero__inner--tight" data-reveal>
+      <div class="hero__inner hero__inner--tight" data-stagger>
         <NwEyebrow on-dark line>{{ eyebrow }}</NwEyebrow>
         <h1 class="page-header__title">{{ title }}</h1>
         <p v-if="lead" class="lead page-header__lead">{{ lead }}</p>
