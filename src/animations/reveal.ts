@@ -54,39 +54,50 @@ export function revealScope(
   const rtl = !!opts.rtl
   const triggers: ScrollTrigger[] = []
 
-  // Single elements.
+  // Single elements — replay every time they enter view (scrolling either
+  // direction) and reset to the hidden state on the way out, so the reveal
+  // re-runs on scroll up as well as down.
   root.querySelectorAll<HTMLElement>('[data-reveal]').forEach((el) => {
     const from = fromVars(el.dataset.reveal || 'up', rtl)
     gsap.set(el, from)
+    const play = () =>
+      gsap.to(el, { ...TO_VARS, duration: 0.9, ease: EASE, overwrite: true })
+    const reset = () => gsap.set(el, from)
     triggers.push(
       ScrollTrigger.create({
         trigger: el,
         start: 'top 85%',
-        once: true,
-        onEnter: () =>
-          gsap.to(el, { ...TO_VARS, duration: 0.9, ease: EASE }),
+        onEnter: play,
+        onEnterBack: play,
+        onLeave: reset,
+        onLeaveBack: reset,
       }),
     )
   })
 
-  // Staggered groups — direct children cascade.
+  // Staggered groups — direct children cascade in, re-running on every entry.
   root.querySelectorAll<HTMLElement>('[data-stagger]').forEach((group) => {
     const items = Array.from(group.children) as HTMLElement[]
     if (!items.length) return
     const from = fromVars(group.dataset.stagger || 'up', rtl)
     gsap.set(items, from)
+    const play = () =>
+      gsap.to(items, {
+        ...TO_VARS,
+        duration: 0.8,
+        ease: EASE,
+        stagger: 0.12,
+        overwrite: true,
+      })
+    const reset = () => gsap.set(items, from)
     triggers.push(
       ScrollTrigger.create({
         trigger: group,
         start: 'top 82%',
-        once: true,
-        onEnter: () =>
-          gsap.to(items, {
-            ...TO_VARS,
-            duration: 0.8,
-            ease: EASE,
-            stagger: 0.12,
-          }),
+        onEnter: play,
+        onEnterBack: play,
+        onLeave: reset,
+        onLeaveBack: reset,
       }),
     )
   })
