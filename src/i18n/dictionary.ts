@@ -15,6 +15,7 @@ const en = {
     mapHint: 'Interactive campus — hover or tap a node',
     scroll: 'Scroll',
     soundOn: 'Turn sound on', soundOff: 'Turn sound off',
+    soundCta: 'Tap for sound',
     nodes: [
       { k: 'Flagship', title: 'Project Quantum', desc: '200 MW GPU-dense, AI-ready sovereign campus in Riyadh.', cta: 'Explore Quantum' },
       { k: 'Connectivity', title: 'Fiber & interconnect', desc: 'Carrier-neutral backbone, low-latency links to Riyadh.', cta: 'Our services' },
@@ -141,6 +142,7 @@ const ar: Dict = {
     mapHint: 'حرم تفاعلي — مرّر أو انقر على نقطة',
     scroll: 'مرّر',
     soundOn: 'تشغيل الصوت', soundOff: 'كتم الصوت',
+    soundCta: 'انقر للصوت',
     nodes: [
       { k: 'الرائد', title: 'مشروع كوانتم', desc: 'حرم سيادي بسعة 200 ميجاواط عالي الكثافة وجاهز للذكاء الاصطناعي في الرياض.', cta: 'استكشف كوانتم' },
       { k: 'الاتصال', title: 'الألياف والربط', desc: 'شبكة محايدة للمشغّلين وروابط منخفضة زمن الوصول بالرياض.', cta: 'خدماتنا' },

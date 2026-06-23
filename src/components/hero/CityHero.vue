@@ -29,8 +29,11 @@ const geo = [
 
 const video = ref<HTMLVideoElement | null>(null)
 const muted = ref(true)
+/** Show the "Tap for sound" prompt until the user interacts with the toggle. */
+const hinted = ref(true)
 
 function toggleSound() {
+  hinted.value = false
   const v = video.value
   if (!v) return
   v.muted = !v.muted
@@ -85,10 +88,12 @@ function scrollDown() {
 
     <button
       class="cityhero__sound"
+      :class="{ 'cityhero__sound--cta': hinted && muted }"
       :aria-label="muted ? t('home.soundOn') : t('home.soundOff')"
       :title="muted ? t('home.soundOn') : t('home.soundOff')"
       @click="toggleSound"
     >
+      <span v-if="hinted && muted" class="cityhero__sound-label">{{ t('home.soundCta') }}</span>
       <svg
         width="20"
         height="20"
