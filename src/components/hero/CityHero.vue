@@ -11,6 +11,7 @@ import { useI18n } from 'vue-i18n'
 import type { Dict } from '@/i18n/dictionary'
 import NwIcon from '@/components/core/NwIcon.vue'
 import heroCity from '@/assets/hero-city.mp4'
+import heroPoster from '@/assets/hero-city-poster.jpg'
 
 const { t, tm, rt } = useI18n()
 const router = useRouter()
@@ -49,11 +50,12 @@ function scrollDown() {
       ref="video"
       class="cityhero__img"
       :src="heroCity"
+      :poster="heroPoster"
       autoplay
       loop
       playsinline
       muted
-      preload="auto"
+      preload="metadata"
       aria-label="NAWAT Quantum campus — isometric view"
     />
     <div class="cityhero__tint" />
